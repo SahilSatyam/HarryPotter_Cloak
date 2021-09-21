@@ -4,7 +4,7 @@ Hey Folks,
 
 This is my project of making Invisible Cloak using an **Image Processing** technique called **Colour Detection and Segmentation**. I have implemented this using Python and OpenCV.
 
-colour detection and segmentation
+colour detection and segmentation: Colour detection is the process of detecting the name of any color.
 
 
 We first have to take a single color cloth that must not contain any other color. I used a green color cloth for my project.
