@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Lora:wght@400;700&display=swap');
+
+/*
+Color Palette:
+  Primary Background: #1a1a1a (Very dark grey, almost black)
+  Secondary Background (Buttons): #4b3f30 (Dark, desaturated brown)
+  Text Color / Button Text: #e0cda4 (Parchment/light gold)
+  Accent Gold: #daa520 (Gold)
+  Accent Red: #740001 (Dark Gryffindor-like red)
+  Button Hover Background: #605142 (A slightly lighter brown for hover)
+*/
+
+.App {
+  text-align: center;
+  font-family: 'Lora', serif; /* Body font */
+  background-color: #1a1a1a; /* Primary Background */
+  color: #e0cda4; /* Text Color */
+  min-height: 100vh; /* Ensure background covers full viewport height */
+  display: flex; /* Added for centering App-header */
+  flex-direction: column; /* Added for centering App-header */
+  align-items: center; /* Added for centering App-header */
+  justify-content: center; /* Added for centering App-header */
+}
+
+.App-header {
+  /* background-color: transparent; No specific background needed here if .App handles it */
+  /* min-height: 100vh; Already handled by .App */
+  /* display: flex; flex-direction: column; align-items: center; justify-content: center; Moved to .App for overall page */
+  padding: 20px;
+  width: 100%;
+  max-width: 900px; /* Max width for content area */
+  box-sizing: border-box;
+}
+
+.App-header h1 {
+  font-family: 'MedievalSharp', cursive; /* Title font */
+  font-size: calc(20px + 5vmin); /* Responsive title size */
+  color: #daa520; /* Accent Gold */
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px #000000; /* Simple text shadow for depth */
+}
+
+.video-container {
+  margin: 20px auto; /* Centering the container */
+  width: 640px;
+  height: 480px;
+  border: 3px solid #daa520; /* Accent Gold border */
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px #daa520; /* Gold glow effect */
+  border-radius: 5px; /* Slightly rounded corners */
+}
+
+.video-container img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  border-radius: 3px; /* Match container's rounding slightly */
+}
+
+.video-placeholder {
+  color: #e0cda4; /* Parchment/light gold */
+  font-size: 1.5em;
+  font-family: 'Lora', serif;
+}
+
+.controls {
+  margin: 30px 0;
+}
+
+.controls button {
+  background-color: #4b3f30; /* Secondary Background - Dark Brown */
+  border: 2px solid #740001; /* Accent Red border */
+  color: #e0cda4; /* Button Text - Parchment */
+  padding: 12px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'Lora', serif; /* Thematic font for buttons */
+  font-size: 1em; /* Adjusted for Lora font */
+  font-weight: bold;
+  margin: 10px 15px;
+  cursor: pointer;
+  border-radius: 8px; /* More pronounced rounded corners */
+  transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5); /* Drop shadow for depth */
+}
+
+.controls button:hover:not(:disabled) {
+  background-color: #605142; /* Lighter brown for hover */
+  border-color: #daa520; /* Gold border on hover */
+  color: #fff; /* Brighter text on hover */
+  transform: translateY(-1px); /* Slight lift effect */
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+.controls button:disabled {
+  background-color: #3a2f23; /* Darker, desaturated brown for disabled */
+  border-color: #504030;
+  color: #8a7e6a; /* Muted text for disabled */
+  cursor: not-allowed;
+  box-shadow: none; /* No shadow for disabled */
+}
+
+.status-message {
+  margin-top: 25px;
+  font-size: 1.1em;
+  font-family: 'Lora', serif;
+  /* Default color is for info, overridden by specific types */
+  color: #e0cda4; /* Parchment/light gold - for info */
+  min-height: 1.5em; /* Reserve space to prevent layout shifts */
+  font-style: italic; 
+  text-shadow: 1px 1px 2px #000000;
+  padding: 5px 10px;
+  border-radius: 3px;
+  transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+}
+
+.status-message.info {
+  color: #e0cda4; /* Parchment/light gold */
+  background-color: transparent; /* Or a very subtle dark background */
+}
+
+.status-message.success {
+  color: #a0d4a0; /* Thematic light green */
+  background-color: rgba(160, 212, 160, 0.1); /* Subtle background for success */
+  text-shadow: 1px 1px 2px #1a1a1a;
+}
+
+.status-message.error {
+  color: #c75c5c; /* Thematic muted red */
+  background-color: rgba(199, 92, 92, 0.1); /* Subtle background for error */
+  text-shadow: 1px 1px 2px #1a1a1a;
+}
+
+/* Optional: Adding a small thematic element like a horizontal rule */
+.App-header hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(218, 165, 32, 0), rgba(218, 165, 32, 0.75), rgba(218, 165, 32, 0));
+  width: 60%;
+  margin: 40px auto;
+}
